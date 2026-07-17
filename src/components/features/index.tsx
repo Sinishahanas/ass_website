@@ -11,10 +11,10 @@ const Features = () => {
           titleClassName="text-primary"
           descriptionClass="text-gray-400"
           subTitleClass="btn-gradient-border-black text-gray-400"
-          subTitle="Why Skillsaint "
-          description="Experience the difference with a platform engineered to help you actually learn, apply, and succeed."
+          subTitle="Why Arena "
+          description="Delivering reliable ELV solutions with quality, expertise, and customer-focused service."
         >
-          The Smarter Way to Learn Tech
+          Your Trusted ELV Solutions Partner
         </SectionTitle>
         <div className="grid gap-6 pt-11 sm:grid-cols-2 sm:pt-14 lg:grid-cols-3 lg:pt-16">
           {featuresData.map((feature) => (

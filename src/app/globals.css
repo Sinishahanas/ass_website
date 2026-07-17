@@ -11,7 +11,7 @@
   --gray-700: #2b303b;
   --gray-600: #525866;
   --gray-500: #717784;
-  --gray-400: #99a0ae;
+  --gray-400: #cfe8f4;
   --gray-300: #cacfd8;
   --gray-200: #e1e4ea;
   --gray-100: #f2f5f8;
@@ -34,8 +34,8 @@
   --purple-900: #3d1d86;
   --purple-800: #4c25a7;
   --purple-700: #5b2cc9;
-  --purple-600: #693ee0;
-  --purple-500: #7d52f4;
+  --purple-600: #104c8c;
+  --purple-500: #1573bb;
   --purple-400: #8c71f6;
   --purple-300: #a897ff;
   --purple-200: #cac0ff;
@@ -177,7 +177,7 @@ button {
 .btn-gradient-border-black {
   background:
     linear-gradient(var(--gray-950), var(--gray-950)) padding-box,
-    linear-gradient(to top, #0E121B00, #222530) border-box;
+    linear-gradient(to top, #0e121b00, #222530) border-box;
   border-radius: 999px;
   border: 1.125px solid transparent;
 }

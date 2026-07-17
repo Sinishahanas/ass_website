@@ -1,16 +1,57 @@
+"use client";
+
 import Button from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { WheatLeavesLeft, WheatLeavesRight } from "@/lib/icons";
 import ButtonArrow from "../ui/buttonArrow";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/effect-fade";
 
 const Hero = () => {
+  const backgroundImages = [
+    "/images/hero/security-camera-urban-video.jpg", // Add your images to public/images/hero/
+    "/images/hero/surveillance.jpg",
+    "/images/hero/cctv3.jpg",
+  ];
   return (
     <section
-      className="overflow-x-hidden bg-cover bg-center bg-no-repeat pt-11 pb-[87px] sm:pt-16 lg:pt-20"
-      style={{ backgroundImage: `url('/images/hero/bg-img.png')` }}
+      className="relative overflow-hidden pt-[140px] pb-[67px] min-h-[700px] flex items-center"
+      // style={{ backgroundImage: `url('/images/hero/bg-img.png')` }}
     >
-      <div className="container">
+      <div className="absolute inset-0 z-0">
+        <Swiper
+          modules={[Autoplay, EffectFade]}
+          effect="fade"
+          speed={1200}
+          autoplay={{
+            delay: 5000,
+            disableOnInteraction: false,
+          }}
+          loop={true}
+          className="h-full w-full"
+        >
+          {backgroundImages.map((img, index) => (
+            <SwiperSlide key={index}>
+              <div
+                className="h-full w-full bg-cover bg-center bg-no-repeat"
+                style={{ backgroundImage: `url(${img})` }}
+              >
+                {/* 
+                   VIGNETTE OVERLAY: 
+                   Makes the very top slightly darker so the white menu links are visible, 
+                   but keeps the center "Original Color".
+                */}
+                <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-transparent"></div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      <div className="container relative z-10">
         <div className="flex flex-col items-center text-center">
           <div className="mb-3 flex items-center gap-2">
             <span>
@@ -43,19 +84,19 @@ const Hero = () => {
               />
             </div>
             <p className="text-sm leading-5 font-medium text-secondary">
-              85k Happy learner
+              1k+ Happy Customers
             </p>
             <span>
               <WheatLeavesRight />
             </span>
           </div>
           <h1 className="text-[clamp(2.25rem,1.663rem+2.6087vw,3.75rem)] leading-[1.2] font-bold tracking-[-1.2px]">
-            Learn New Skills.{" "}
-            <span className="block text-gray-400">Create Your Future.</span>
+            Wired for Safety.{" "}
+            <span className="block text-gray-400">Built for Reliability.</span>
           </h1>
           <p className="mx-auto mt-4 max-w-[629px] text-center leading-[1.5] text-secondary sm:text-lg lg:text-xl">
-            Discover hundreds of curated lessons to boost your career, all in
-            one place. Learn at your own pace from industry experts
+            Discover complete fire safety and electrical services, designed to
+            keep your buildings secure, compliant, and efficiently powered.
           </p>
           <div className="mt-12 flex flex-col gap-4 max-sm:w-full sm:flex-row">
             <Button
@@ -63,12 +104,12 @@ const Hero = () => {
               size="lg"
               className="py-1.5 pr-1.5 pl-6 max-sm:w-full"
             >
-              <Link href={"/courses"}>
-                <span className="w-full">Browse Course</span>
+              <Link href="/services">
+                <span className="w-full">Browse Services</span>
                 <ButtonArrow />
               </Link>
             </Button>
-            <Button
+            {/* <Button
               asChild
               variant="outline"
               size="lg"
@@ -77,17 +118,17 @@ const Hero = () => {
               <Link href={"/about"}>
                 <span>Learn More</span>
               </Link>
-            </Button>
+            </Button> */}
           </div>
           {/* image gallery */}
-          <div className="pt-20 sm:pt-[154px]">
+          <div className="pt-20 sm:pt-[11 4px]">
             <div className="mx-auto grid max-w-[1048px] grid-cols-2 lg:grid-cols-4">
               <div className="relative z-[1] h-[272px] w-[261px] rotate-[7deg] rounded-[14.7px] bg-primary p-1.5 shadow-2xl">
                 <Image
                   width={261}
                   height={272}
                   sizes="100vw"
-                  src={"/images/hero/img-1.png"}
+                  src={"/images/hero/alarm.png"}
                   alt="img"
                 />
               </div>
@@ -96,7 +137,7 @@ const Hero = () => {
                   width={261}
                   height={272}
                   sizes="100vw"
-                  src={"/images/hero/img-2.png"}
+                  src={"/images/hero/cct.png"}
                   alt="img"
                   className="rounded-[14.7px]"
                 />
@@ -106,7 +147,7 @@ const Hero = () => {
                   width={261}
                   height={272}
                   sizes="100vw"
-                  src={"/images/hero/img-3.png"}
+                  src={"/images/hero/cam.jpg"}
                   alt="img"
                   className="rounded-[14.7px]"
                 />
@@ -116,7 +157,7 @@ const Hero = () => {
                   width={261}
                   height={272}
                   sizes="100vw"
-                  src={"/images/hero/img-4.png"}
+                  src={"/images/hero/emergency-exit-sign.jpg"}
                   alt="img"
                   className="rounded-[14.7px]"
                 />

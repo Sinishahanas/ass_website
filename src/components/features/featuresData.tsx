@@ -1,8 +1,10 @@
 import {
   CertificateCheckFill,
-  ClockFill,
-  GraduationHatFill,
+  Headset,
+  ShieldChecker,
+  UserCheck,
 } from "@/lib/icons";
+import { Handshake } from "lucide-react";
 import { ReactElement } from "react";
 
 type featureType = {
@@ -15,26 +17,36 @@ type featureType = {
 export const featuresData: featureType[] = [
   {
     id: 1,
-    icon: <GraduationHatFill />,
-    title: "Expert Instructors",
+    icon: <UserCheck />,
+    title: "Expertise & Experience",
     description:
-      "Earn from experienced professionals who bring real-world expertise to every lesson.",
-    thumbnail: "/images/features/img-1.png",
+      "Skilled professionals delivering reliable ELV solutions with industry expertise.",
+    thumbnail: "/images/features/expertise.png",
   },
   {
     id: 2,
-    icon: <ClockFill />,
-    title: "Interactive Learning Experience",
+    icon: <ShieldChecker />,
+    title: "Quality & Reliability",
     description:
-      "Engage with video lessons, assignments, and quizzes learning fun and practical.",
-    thumbnail: "/images/features/img-2.png",
+      "Providing high-quality systems designed for secure, efficient, and long-lasting performance.",
+    thumbnail: "/images/features/quality.png",
   },
   {
     id: 3,
-    icon: <CertificateCheckFill />,
-    title: "Recognized Certificates",
+    // icon: <Handshake className="text-purple-500" size={25} />,
+    icon: (
+      <div className="relative">
+        <Handshake className="absolute text-white" size={20} strokeWidth={3} />
+        <Handshake
+          className="text-purple-500 relative"
+          size={18}
+          strokeWidth={3}
+        />
+      </div>
+    ),
+    title: "Complete Support",
     description:
-      "Boost your portfolio with verified certificates after completing courses.",
-    thumbnail: "/images/features/img-3.png",
+      "Offering end-to-end services from consultation and installation to maintenance and support.",
+    thumbnail: "/images/features/support.png",
   },
 ];

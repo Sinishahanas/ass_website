@@ -9,7 +9,7 @@ type PropsType = {
 const PageHeader = ({ children, subTitle, description }: PropsType) => {
   return (
     <section
-      className="overflow-hidden bg-contain bg-bottom bg-no-repeat pt-20 pb-17"
+      className="overflow-hidden bg-contain bg-bottom bg-no-repeat pt-40 pb-17"
       style={{
         backgroundImage: `url('/images/page-header/page-header-bg.png')`,
       }}

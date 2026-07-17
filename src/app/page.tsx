@@ -1,7 +1,7 @@
 import Hero from "@/components/hero";
 import Categories from "@/components/categories";
 import OurAchievements from "@/components/ourAchievements";
-import Courses from "@/components/courses";
+import Courses from "@/components/services";
 import Features from "@/components/features";
 import Testimonial from "@/components/testimonial";
 import Cta from "@/components/cta";
@@ -50,8 +50,8 @@ const Home = () => {
     <main>
       <Hero />
       <Categories />
-      <OurAchievements />
       <Courses />
+      <OurAchievements />
       <Features />
       <Testimonial />
       <Cta />

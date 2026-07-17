@@ -25,7 +25,7 @@ const Cta = ({ className }: { className?: string }) => {
                 size="lg"
                 className="py-1.5 pr-1.5 pl-6 max-lg:w-full"
               >
-                <Link href={"/courses"}>
+                <Link href={"services"}>
                   <span className="w-full"> Browse Course</span>
                   <ButtonArrow />
                 </Link>
